@@ -39,6 +39,7 @@ function MapStackScreen() {
             borderBottomWidth: 2,
             borderBottomColor: "black",
           },
+          headerTintColor: "white",
           headerBackTitle: "Tilbake",
           headerBackTitleStyle: {
             color: "white",
