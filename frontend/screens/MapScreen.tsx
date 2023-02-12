@@ -6,13 +6,15 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { useRef } from "react";
 
-import MapView, { Callout, Marker } from "react-native-maps";
+import MapView, { Marker, Callout } from "react-native-maps";
 import * as Linking from "expo-linking";
 
 const MapScreen = ({ navigation }) => {
   const { height, width } = Dimensions.get("window");
+
+  const selectedMarker = useRef(null);
 
   const LATITUDE_DELTA = 0.09;
   const LONGITUDE_DELTA = LATITUDE_DELTA * (width / height);
@@ -20,7 +22,8 @@ const MapScreen = ({ navigation }) => {
   const locations = [
     {
       title: "Dødens dal",
-      description: "Syyyykt fett sted med mye konsterter etc.",
+      description:
+        "Syyyykt fett sted med mye konsterter etc. Trykk her for å se områdekart",
       latLong: {
         latitude: 63.41916952893542,
         longitude: 10.406133293681222,
@@ -76,7 +79,7 @@ const MapScreen = ({ navigation }) => {
               title={location.title}
               description={location.description}
               onPress={() => {
-                navigation.navigate("Details");
+                selectedMarker.current = location.latLong.latitude;
               }}
             >
               <Image
@@ -88,6 +91,14 @@ const MapScreen = ({ navigation }) => {
                   resizeMode: "cover",
                 }}
               />
+              <Callout
+                style={{ width: 200 }}
+                onPress={() => {
+                  navigation.navigate("Details");
+                }}
+              >
+                <Text style={styles.desciption}>{location.description}</Text>
+              </Callout>
             </Marker>
           );
         })}
@@ -103,5 +114,9 @@ const styles = StyleSheet.create({
   map: {
     width: "100%",
     height: "100%",
+  },
+  desciption: {
+    fontSize: 15,
+    paddingHorizontal: 10,
   },
 });
