@@ -13,6 +13,10 @@ import React, { useState, useEffect } from "react";
 
 import * as Linking from "expo-linking";
 
+import Constants from "expo-constants";
+
+const { manifest } = Constants;
+
 const EventsScreen = () => {
   const [data, setData] = useState(null);
 
@@ -20,7 +24,10 @@ const EventsScreen = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:7071/api/scrapeAndExport");
+      const url = `http://${manifest.debuggerHost
+        .split(":")
+        .shift()}:7071/api/scrapeAndExport`;
+      const res = await fetch(url);
       const resJson = await res.json();
 
       console.log(resJson);
