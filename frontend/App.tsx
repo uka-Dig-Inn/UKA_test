@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import { Feather } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
@@ -11,6 +12,44 @@ import { AntDesign } from "@expo/vector-icons";
 import HomeScreen from "./screens/HomeScreen";
 import MapScreen from "./screens/MapScreen";
 import EventsScreen from "./screens/EventsScreen";
+import DodensDetailsScreen from "./screens/DodensDetailsScreen";
+
+const HomeStack = createStackNavigator();
+
+function MapStackScreen() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="Map"
+        component={MapScreen}
+        options={{
+          headerTitle: "UKA-23",
+          headerTitleStyle: { color: "white", fontSize: 25 },
+          headerStyle: { backgroundColor: "#F9B148" },
+        }}
+      />
+      <HomeStack.Screen
+        name="Details"
+        component={DodensDetailsScreen}
+        options={{
+          headerTitle: "",
+          headerTitleStyle: { color: "white", fontSize: 25 },
+          headerStyle: {
+            backgroundColor: "#F9B148",
+            borderBottomWidth: 2,
+            borderBottomColor: "black",
+          },
+          headerBackTitle: "Tilbake",
+          headerBackTitleStyle: {
+            color: "white",
+            fontWeight: "700",
+            fontSize: 20,
+          },
+        }}
+      />
+    </HomeStack.Navigator>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 
@@ -55,11 +94,10 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Kart"
-        component={MapScreen}
+        component={MapStackScreen}
         options={{
-          headerTitle: "UKA-23",
-          headerTitleStyle: { color: "white", fontSize: 25 },
-          headerStyle: { backgroundColor: "#F9B148" },
+          headerShown: false,
+
           tabBarIcon: ({ color, size }) => (
             <Feather name="map" size={24} color="white" />
           ),

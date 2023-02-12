@@ -11,7 +11,7 @@ import React from "react";
 import MapView, { Callout, Marker } from "react-native-maps";
 import * as Linking from "expo-linking";
 
-const MapScreen = () => {
+const MapScreen = ({ navigation }) => {
   const { height, width } = Dimensions.get("window");
 
   const LATITUDE_DELTA = 0.09;
@@ -22,8 +22,8 @@ const MapScreen = () => {
       title: "Dødens dal",
       description: "Syyyykt fett sted med mye konsterter etc.",
       latLong: {
-        latitude: 63.41939498228492,
-        longitude: 10.406626136955333,
+        latitude: 63.41916952893542,
+        longitude: 10.406133293681222,
       },
       url: "https://www.uka.no/",
     },
@@ -31,8 +31,8 @@ const MapScreen = () => {
       title: "Studentersamfundet",
       description: "Vårt røde fantastiske bygg full av god stemning!",
       latLong: {
-        latitude: 63.423205158334675,
-        longitude: 10.395008325513349,
+        latitude: 63.422464533442934,
+        longitude: 10.39539904498909,
       },
       url: "https://www.uka.no/",
     },
@@ -75,6 +75,9 @@ const MapScreen = () => {
               coordinate={location.latLong}
               title={location.title}
               description={location.description}
+              onPress={() => {
+                navigation.navigate("Details");
+              }}
             >
               <Image
                 source={require("../assets/doge.webp")}
