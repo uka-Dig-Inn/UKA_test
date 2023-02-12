@@ -8,6 +8,14 @@ Frontend:
   - kjørrrrr
   
 Backend:
+
+  - må installere Azure CLI globalt:
+      - Windows: 
+          - npm i -g azure-functions-core-tools@4 --unsafe-perm true
+      - Mac: 
+          - brew tap azure/functions
+          - brew install azure-functions-core-tools@4
+
   - naviger inn til "scrapeAndExport" folderen, inne i "/backend/api/"
   - kjør "npm install axios cheerio" i terminalen
   - kjør npm start
