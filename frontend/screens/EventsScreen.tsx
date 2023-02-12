@@ -20,9 +20,7 @@ const EventsScreen = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(
-        "https://azure-scrape.azurewebsites.net/api/scrapeAndExport?"
-      );
+      const res = await fetch("http://localhost:7071/api/scrapeAndExport");
       const resJson = await res.json();
 
       console.log(resJson);
