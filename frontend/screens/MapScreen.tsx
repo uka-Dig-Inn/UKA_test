@@ -22,8 +22,7 @@ const MapScreen = ({ navigation }) => {
   const locations = [
     {
       title: "Dødens dal",
-      description:
-        "Syyyykt fett sted med mye konsterter etc. Trykk her for å se områdekart",
+      description: "Trykk her for å se kart over dødens dal",
       latLong: {
         latitude: 63.41916952893542,
         longitude: 10.406133293681222,
