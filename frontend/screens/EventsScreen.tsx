@@ -60,12 +60,7 @@ const EventsScreen = () => {
           }}
           data={data}
           renderItem={({ item }) => (
-            <Item
-              title={item.text}
-              src={item.src}
-              imgUrl={item.imgUrl}
-              keyExtractor={(item) => item.id}
-            />
+            <Item title={item.text} src={item.src} imgUrl={item.imgUrl} />
           )}
           ItemSeparatorComponent={(props) => {
             console.log("props", props); // here you can access the trailingItem with props.trailingItem
