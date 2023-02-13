@@ -22,7 +22,7 @@ async function scrapeWebsite() {
   return new Promise(async (resolve, reject) => {
     let res = {};
     let eventsData = [];
-    const UKAurl = "https://www.uka.no/";
+    const UKAurl = "https://www.uka.no/nyheter/";
 
     // Henter hele nettsiden
     const response = await axios.get(UKAurl);

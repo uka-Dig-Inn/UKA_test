@@ -1,9 +1,28 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useCallback } from "react";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+
+SplashScreen.preventAutoHideAsync();
 
 const HomeScreen = () => {
+  const [fontsLoaded] = useFonts({
+    "Raleway-regular": require("../assets/fonts/Raleway/static/Raleway-Regular.ttf"),
+    "Raleway-bold": require("../assets/fonts/Raleway/static/Raleway-Bold.ttf"),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
+    <View style={styles.container} onLayout={onLayoutRootView}>
       <Text style={styles.text}>FETESTE APPEN EVER</Text>
     </View>
   );

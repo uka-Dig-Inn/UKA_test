@@ -13,6 +13,7 @@ import HomeScreen from "./screens/HomeScreen";
 import MapScreen from "./screens/MapScreen";
 import EventsScreen from "./screens/EventsScreen";
 import DodensDetailsScreen from "./screens/DodensDetailsScreen";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const HomeStack = createStackNavigator();
 
@@ -79,7 +80,7 @@ function MyTabs() {
         name="Begivenheter"
         component={EventsScreen}
         options={{
-          headerTitle: "UKA-23",
+          headerTitle: "Nyheter - UKA-23",
           headerTitleStyle: { color: "white", fontSize: 25 },
           headerStyle: { backgroundColor: "#F9B148" },
           tabBarIcon: ({ color, size }) => (
@@ -116,9 +117,11 @@ function MyTabs() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 

@@ -12,6 +12,7 @@ import MapView, { Marker, Callout } from "react-native-maps";
 import * as Linking from "expo-linking";
 
 const MapScreen = ({ navigation }) => {
+  
   const { height, width } = Dimensions.get("window");
 
   const selectedMarker = useRef(null);

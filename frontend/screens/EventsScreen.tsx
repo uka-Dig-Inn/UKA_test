@@ -61,7 +61,7 @@ const EventsScreen = () => {
           contentContainerStyle={{
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 40,
+            paddingVertical: 20,
           }}
           data={data}
           renderItem={({ item }) => (
@@ -82,9 +82,9 @@ export default EventsScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#F9B148",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F9B148",
   },
   text: {
     fontWeight: "700",
