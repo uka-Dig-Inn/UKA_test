@@ -12,7 +12,6 @@ import MapView, { Marker, Callout } from "react-native-maps";
 import * as Linking from "expo-linking";
 
 const MapScreen = ({ navigation }) => {
-  
   const { height, width } = Dimensions.get("window");
 
   const selectedMarker = useRef(null);
@@ -23,7 +22,7 @@ const MapScreen = ({ navigation }) => {
   const locations = [
     {
       title: "Dødens dal",
-      description: "Trykk her for å se kart over dødens dal",
+      description: "Trykk her for å se områdekart over dødens dal",
       latLong: {
         latitude: 63.41916952893542,
         longitude: 10.406133293681222,
