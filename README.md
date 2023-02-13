@@ -13,10 +13,13 @@ Backend:
   - naviger inn til "scrapeAndExport" folderen, inne i "/backend/api/"
   - kjør "npm install axios cheerio" i terminalen
   - kjør npm start
-  - skal komme opp en link i terminalen som dere kan åpne i nettleseren (hold musepekeren over linken og hold inn ctrl mens du trykker på linken)
-  - dersom du ønsker å gjøre endringer for å teste funksjonen er det kun index.js inne i "/backend/api/scrapeAndExport" som er nødvendig å endres på. :)
+  - Om du får opp en localhost-lenke er alt klart og du kan starte opp frontenden :) 
   
- Om du vile kjøre appen med denne "scrape"-funksjonaliteten (som brukes på "events" siden), må du først starte backend-serveren, så åpne en ny terminal og følge      stegene under.
+  dersom du ønsker å gjøre endringer for å teste funksjonen er det kun index.js inne i "/backend/api/scrapeAndExport" som er nødvendig å endres på. :)
+  
+  
+  NB: husk å starte backenden før du starter frontendend
+  
   
 Frontend: 
   - naviger til frontend-mappa
