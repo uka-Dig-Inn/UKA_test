@@ -41,5 +41,6 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "700",
     fontSize: 25,
+    fontFamily: "Raleway-bold",
   },
 });

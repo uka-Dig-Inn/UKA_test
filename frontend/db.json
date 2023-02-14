@@ -8,5 +8,36 @@
       "name": "Ola",
       "alder": 23
     }
-  ]
+  ],
+  "forSVINN_posts": {
+    "posts": [
+      {
+        "dato": "13.02.2023",
+        "description": "Hei alle fine UKEfunker! Vi har nå 20 stk. matesker som dere kan komme og hente :)",
+        "allergier": "gluten",
+        "type": "lasagne",
+        "tid": "18:30",
+        "tidspunkt_publisert": "17:00",
+        "location": "Dødens Dal"
+      },
+      {
+        "dato": "13.02.2023",
+        "description": "Hei alle fine UKEfunker! Vi har nå 10 stk. matesker som dere kan komme og hente :)",
+        "allergier": "laktose",
+        "type": "grøt",
+        "tid": "19:30",
+        "tidspunkt_publisert": "16:30",
+        "location": "Baccarat"
+      },
+      {
+        "dato": "13.02.2023",
+        "description": "Hei alle fine UKEfunker! Vi har nå 10 stk. matesker som dere kan komme og hente :)",
+        "allergier": "nøtter",
+        "type": "noe med nøtter iguess",
+        "tid": "18:00",
+        "tidspunkt_publisert": "17:30",
+        "location": "Spektrum"
+      }
+    ]
+  }
 }

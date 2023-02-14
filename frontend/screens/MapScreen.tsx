@@ -82,12 +82,15 @@ const MapScreen = ({ navigation }) => {
               }}
             >
               <Image
-                source={require("../assets/doge.webp")}
+                source={require("../assets/logo.png")}
                 style={{
                   width: 30,
                   height: 30,
                   borderRadius: 30,
-                  resizeMode: "cover",
+                  resizeMode: "contain",
+                  backgroundColor: "#F9B148",
+                  borderColor: "black",
+                  borderWidth: 1,
                 }}
               />
               <Callout
